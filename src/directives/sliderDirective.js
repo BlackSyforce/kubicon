@@ -67,18 +67,6 @@ angular.module('Kubicon')
                 }
 
                 function createScope($scope) {
-                    $scope.slides = [{
-                            title: 'Autodesk Maya I',
-                            text: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque velit velit, porttitor a congue a, imperdiet id justo. Maecenas vel scelerisque lorem. Fusce lorem erat, bibendum in pretium quis, aliquam nec nibh'
-                        }, {
-                            title: 'Autodesk Maya II',
-                            text: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque velit velit, porttitor a congue a, imperdiet id justo. Maecenas vel scelerisque lorem. Fusce lorem erat, bibendum in pretium quis, aliquam nec nibh'
-                        }, {
-                            title: 'Autodesk Maya III',
-                            text: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque velit velit, porttitor a congue a, imperdiet id justo. Maecenas vel scelerisque lorem. Fusce lorem erat, bibendum in pretium quis, aliquam nec nibh'
-                        }
-                    ];
-
                     if ($scope.slides && $scope.slides.length > 0) {
                         for (var i = 0; i < $scope.slides.length; i++) {
                             $scope.slides[i].active = false;
