@@ -1,0 +1,24 @@
+@import 'global/reset.scss';
+@import 'global/colors.scss';
+@import 'global/images.scss';
+@import 'global/containers.scss';
+@import 'global/position.scss';
+@import 'global/fonts.scss';
+@import 'global/effects.scss';
+
+@import 'components/logo.scss';
+@import 'components/header.scss';
+@import 'components/footer.scss';
+@import 'components/menu.scss';
+@import 'components/grid.scss';
+@import 'components/frame.scss';
+@import 'components/button-box.scss';
+@import 'components/slider.scss';
+@import 'components/map.scss';
+
+@import 'pages/home.scss';
+@import 'pages/products.scss';
+@import 'pages/products-details.scss';
+@import 'pages/products-description.scss';
+@import 'pages/clients.scss';
+@import 'pages/contact.scss';

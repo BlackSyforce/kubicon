@@ -1,0 +1,25 @@
+.frame {
+    background: $opac-simple-white;
+    width: 485px;
+    height: 215px;
+    display: inline-table;
+
+    &.intro {
+        margin-top: 1px;
+    }
+
+    .interior {
+        margin: 35px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-family: 'SohoStd-Medium';
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 13px;
+        line-height: 25px;
+    }
+}

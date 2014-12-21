@@ -1,0 +1,70 @@
+.box-shadow {
+    -moz-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.flip-box {
+    position: relative;
+    background: none;
+
+    .flip-card {
+        -o-transition: all .5s;
+        -ms-transition: all .5s;
+        -moz-transition: all .5s;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+    }
+
+    .front, .back {
+        background: $transparent-gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .front {
+        &:after {
+            z-index: 2;
+        }
+    }
+
+    .back {
+        z-index: 1;
+        -webkit-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    &:hover {
+        .flip-card {
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .front {
+            z-index: 1;
+            -webkit-transition: visibility 0.25s linear;
+            -moz-transition: visibility 0.25s linear;
+            -o-transition: visibility 0.25s linear;
+            transition: visibility 0.25s linear;
+            visibility: hidden;
+        }
+
+        .back {
+            z-index: 2;
+        }
+    }
+}

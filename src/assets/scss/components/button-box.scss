@@ -1,0 +1,16 @@
+.button-box {
+    background: $teal;
+    text-align: center;
+    cursor: pointer;
+
+    &.button-top {
+        font-size: 38px;
+        font-family: "SohoStd-Medium";
+        font-weight: bold;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    }
+}

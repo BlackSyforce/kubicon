@@ -1,0 +1,48 @@
+{
+  "name": "lettero",
+  "bin": {
+    "cs": "./bin/index.js"
+  },
+  "version": "1.0.0",
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "Proprietary",
+  "author": {
+    "name": "Syforce Lightningstorm",
+    "email": "blacksyforce@yahoo.com"
+  },
+  "contributors": [{
+      "name": "Pyros Honorflame"
+    }, {
+      "name": "Shadow Darkpath"
+    }
+  ],
+  "private": true,
+  "directories": {
+    "lib": "/src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "express": "*",
+    "grunt": "*",
+    "grunt-angular-templates": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-newer": "*",
+    "grunt-ng-annotate": "*",
+    "grunt-notify": "*",
+    "grunt-sails-linker": "*",
+    "grunt-shell": "*",
+    "serve-static": "*"
+  }
+}

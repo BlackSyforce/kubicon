@@ -1,0 +1,48 @@
+.container {
+    width: 1349px;
+    height: 1728px;
+    background: $background;
+    color: $dark-gray;
+    margin: 0 auto;
+    font-family: 'SohoStd';
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        width: $content-width;
+    }
+
+    .content {
+        width: $content-width;
+    }
+
+    .header {
+        width: 893px;
+    }
+
+    .arrow-box {
+        width: 28px;
+        height: 28px;
+    }
+
+    .button-box {
+        width: 26px;
+        height: 26px;
+    }
+
+    .button-top {
+        width: 46px;
+        height: 46px;
+    }
+
+    .tile {
+        width: 196px;
+        height: 196px;
+    }
+
+    .footer {
+        .logo-autodesk {
+            margin-right: 35px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.header {
+    .title {
+        background: $white;
+    }
+
+    .subtitle {
+        margin: 23px 31px;
+        font-size: 12px;
+    }
+
+    .logo {
+        margin: 23px 25px 22px 0;
+    }
+
+    .menu {
+        li:not(.selected):hover {
+            color: $white;
+            background: $dark-gray;
+        }
+    }
+}
+
+.underlay {
+    height: $content-height;
+}

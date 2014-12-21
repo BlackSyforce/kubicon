@@ -1,0 +1,33 @@
+.footer {
+    width: 100%;
+
+    .frame {
+        width: 967px;
+        height: inherit;
+        background: $opac-white;
+
+        .interior {
+            margin: 25px 0 15px 0;
+            padding-left: 100px;
+        }
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+
+    .menu {
+        font-size: 12px;
+        margin-top: 34px;
+
+        li {
+            width: 80px;
+            background: none;
+            padding-bottom: 10px;
+
+            a {
+                text-align: left;
+            }
+        }
+    }
+}

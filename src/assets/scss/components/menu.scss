@@ -1,0 +1,25 @@
+.menu {
+    font-size: 13px;
+    font-family: 'SohoStd-Medium';
+
+    li {
+        width: 113px;
+        float: left;
+        padding: 16px 0;
+        cursor: pointer;
+        background: $transparent-white;
+
+        &.selected {
+            background: $white;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+        }
+    }
+}

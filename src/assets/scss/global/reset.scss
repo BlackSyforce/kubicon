@@ -1,0 +1,22 @@
+body, ul, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}

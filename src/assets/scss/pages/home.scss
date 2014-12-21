@@ -1,0 +1,18 @@
+.home {
+    .content {
+        height: 1544px;
+    }
+
+    .underlay {
+        background: $underlay-home;
+    }
+
+    .slider-content {
+        position: relative;
+        overflow: hidden;
+
+        .frame {
+            position: absolute;
+        }
+    }
+}

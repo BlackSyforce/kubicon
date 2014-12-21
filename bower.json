@@ -1,0 +1,21 @@
+{
+  "name": "lettero",
+  "version": "1.0.0",
+  "authors": [
+    "Syforce Lightningstorm <blacksyforce@yahoo.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests",
+    "src/components"
+  ],
+  "license": "Proprietary",
+  "dependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "ngmap": "*"
+  }
+}

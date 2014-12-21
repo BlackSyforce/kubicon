@@ -1,0 +1,19 @@
+.products {
+    &.container {
+        height: 1420px;
+        background: $background-products;
+    }
+
+    .content {
+        height: 1236px;
+    }
+
+    .underlay {
+        background: $underlay-products;
+    }
+
+    .intro {
+        margin-left: 113px;
+        width: 377px;
+    }
+}
