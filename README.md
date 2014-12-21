@@ -7,9 +7,11 @@ Setting up development enviroment:
 3. Run "bower install"
 
 Run in development mode: "grunt dev:serve"
+<br>
 Run build process: "grunt build"
 
 Note:
 
 Use the img folder for the static assets specific to the application.
+<br>
 Use the images folder for dynamic assets like partners and product images.
