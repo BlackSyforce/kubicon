@@ -8,7 +8,7 @@ Setting up development enviroment:
 
 Run in development mode: "grunt dev:serve"
 <br>
-Run build process: "grunt build"
+Run build process: "grunt build" (this will create the dist folder)
 
 Note:
 
