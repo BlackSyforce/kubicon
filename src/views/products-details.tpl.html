@@ -23,7 +23,20 @@
             <!-- End of Frame -->
 
             <div class="grid pull-left">
+                <div ng-repeat="product in products" ng-class="getCardCss($index)" class="card product">
+                    <div class="frame product-description">
+                        <div class="interior">
+                            <div class="title" ng-bind="product.title"></div>
+                            <div class="description" ng-bind="product.description"></div>
+                            <div class="button-box">+</div>
+                        </div>
+                    </div>
+                    <div class="frame product-image" ng-class="getImageCss($index)">
+                        <img ng-src="{{product.img}}">
+                    </div>
+                </div>
 
+<!--
                 <div class="card bl1 product">
                     <div class="frame product-description">
                         <div class="interior">
@@ -68,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-            
+            -->
             </div>
             <!-- End of Grid -->
             <br class="clearfix">
