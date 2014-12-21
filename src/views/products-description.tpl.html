@@ -1,13 +1,13 @@
-<div absolut-container class="container product-description">
+<div absolut-container class="container product-description" ng-init="initProduct()">
 	<div absolut-content class="content pull-right">
 		<div class="underlay box-shadow"></div>
 
 		<div class="overlay">
 			<div class="header" ng-include="'./views/header.tpl.html'"></div>
 			
-			<div class="frame btn pull-left pointer">
+			<div class="frame btn pull-left pointer" ng-click="selectPage(1)">
                 <div class="interior">
-                    <div class="subtitle">< Inapoi la proiecte generale</div>
+                    <div class="subtitle" ng-cloak>< Inapoi la {{category.title.toLowerCase()}}</div>
                 </div>
             </div>
 
@@ -17,8 +17,8 @@
             	<div class="pull-left spacer">
 		            <div class="frame">
 						<div class="interior">
-							<div class="title">Autodesk AUTOCAD LT</div>
-							<div class="description">Conceput pentru profesioniştii pentru care contează compatibilitatea deplină cu formatul DWG™, dar nu folosesc modelarea 3D sau opţiunile de personalizare a programului. Aplicaţia AutoCAD LT este binecunoscută pentru eficienţa, puterea şi siguranţa sa.  La cererea utilizatorilor s-au adăugat în AutoCAD LT mai multe instrumente 2D, cum este cazul funcţiei “ALIGN”, facilităţii “xref” şi al comenzilor de creare şi editare a atributelor blocurilor. <br>Această soluţie software, destinată redactării proiectelor şi detaliilor de execuţie, reprezintă o alegere serioasă şi profesională ce pune acum la dispoziţia utilizatorilor mai multe metode de creştere a productivităţii.</div>
+							<div class="title" ng-bind="product.title"></div>
+							<div class="description" ng-bind="product.description"></div>
 						</div>
 					</div>
 					<!-- End of Frame -->

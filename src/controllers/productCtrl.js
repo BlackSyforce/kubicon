@@ -1,20 +1,182 @@
 angular.module('Kubicon')
-    .controller('ProductCtrl', function($scope, $rootScope) {
+    .controller('ProductCtrl', function($scope, $rootScope, $location) {
         $rootScope.selectedPage = 1;
 
-        $scope.products = [{
-        	title: 'Autodesk AUTOCAD LT',
-        	img: './assets/images/product1.png',
-        	description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+        var productsMap = [{
+            id: 1,
+            title: 'Proiecte generale',
+            products: [{
+                id: 1,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 2,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 3,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
         }, {
-        	title: 'AUTOCAD 2013',
-        	img: './assets/images/product1.png',
-        	description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            id: 2,
+            title: 'Mecanica',
+            products: [{
+                id: 4,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 5,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 6,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
         }, {
-        	title: '3DS Max',
-        	img: './assets/images/product1.png',
-        	description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            id: 3,
+            title: 'Instalatii',
+            products: [{
+                id: 7,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 8,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 9,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
+        }, {
+            id: 4,
+            title: 'Structuri',
+            products: [{
+                id: 10,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 11,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 12,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
+        }, {
+            id: 5,
+            title: 'Arhitectura',
+            products: [{
+                id: 13,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 14,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 15,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
+        }, {
+            id: 6,
+            title: 'Simulari',
+            products: [{
+                id: 16,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 17,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 18,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
+        }, {
+            id: 7,
+            title: 'Infrastructura',
+            products: [{
+                id: 19,
+                title: 'Autodesk AUTOCAD LT',
+                img: './assets/images/product1.png',
+                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+            }, {
+                id: 20,
+                title: 'AUTOCAD 2013',
+                img: './assets/images/product1.png',
+                description: 'Proiectati si modelati universul inconjurator cu ajutorul functiilor performante si caracteristicilor flexibile ale aplicatiei software AutoCAD®, unul dintre cele mai utilizate programe de proiectare 2D si 3D la nivel mondial. Realizati documentatia de proiect rapid, partajati documente si explorati ideile intuitiv in mediul de lucru 3D al AutoCAD. Instrumentele performante de programare si multitudinea de “add-ons” disponibile va ofera posibilitatea personalizarii aplicatiei in functie de nevoile dvs. specifice de lucru.'
+            }, {
+                id: 21,
+                title: '3DS Max',
+                img: './assets/images/product1.png',
+                description: 'Autodesk® 3ds Max® Design ofera noi unelte puternice de randare, accelereaza fluxurile de lucru repetate si sporeste interoperabilitatea, crescand semnificativ productivitatea generala si calitatea lucrarilor rezultate. Mai mult decat atat, usurinta lucrului cu date CAD se datoreaza interoperabilitatii cu solutia software Autodesk® Alias® si fluxului de lucru automat catre AutoCAD® Civil 3D®.'
+            }]
         }];
+
+        $scope.category = {};
+        $scope.product = {};
+
+        $scope.initLocation = function() {
+            var items = $location.path().split('/');
+            var location = items[items.length - 1];
+
+            if (!isNaN(location)) {
+                for (var i = 0; i < productsMap.length; i++) {
+                    if (productsMap[i].id == location) {
+                        $scope.category = productsMap[i];
+                        return;
+                    }
+                }
+            }
+        };
+
+        $scope.initProduct = function() {
+            var items = $location.path().split('/');
+            var location = items[items.length - 2];
+            var product = items[items.length - 1];
+
+            if (!isNaN(location) && !isNaN(product)) {
+                for (var i = 0; i < productsMap.length; i++) {
+                    if (productsMap[i].id == location) {
+                        $scope.category = productsMap[i];
+                        for (var j = 0; j < productsMap[i].products.length; j++) {
+                            if (productsMap[i].products[j].id == product) {
+                                $scope.product = productsMap[i].products[j];
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        $scope.selectProduct = function(product) {
+            $rootScope.selectProduct($scope.category.id, product.id);
+        };
 
         $scope.getCardCss = function($index) {
         	switch ($index % 3) {

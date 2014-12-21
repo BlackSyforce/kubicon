@@ -1,11 +1,11 @@
-<div absolut-container class="container products-details">
+<div absolut-container class="container products-details" ng-init="initLocation()">
     <div absolut-content class="content pull-right">
         <div class="underlay box-shadow"></div>
 
         <div class="overlay">
             <div class="header" ng-include="'./views/header.tpl.html'"></div>
 
-            <div class="frame btn pull-left pointer">
+            <div class="frame btn pull-left pointer" ng-click="selectPage(1)">
                 <div class="interior">
                     <div class="subtitle">< Inapoi la produse</div>
                 </div>
@@ -23,12 +23,12 @@
             <!-- End of Frame -->
 
             <div class="grid pull-left">
-                <div ng-repeat="product in products" ng-class="getCardCss($index)" class="card product">
+                <div ng-repeat="product in category.products" ng-class="getCardCss($index)" class="card product">
                     <div class="frame product-description">
                         <div class="interior">
                             <div class="title" ng-bind="product.title"></div>
                             <div class="description" ng-bind="product.description"></div>
-                            <div class="button-box">+</div>
+                            <div class="button-box" ng-click="selectProduct(product)">+</div>
                         </div>
                     </div>
                     <div class="frame product-image" ng-class="getImageCss($index)">

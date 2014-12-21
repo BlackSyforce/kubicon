@@ -18,7 +18,8 @@
 
 	.btn {
 		&.frame {
-			width: 252px;
+			width: initial;
+			display: inline-block;
 			height: 50px;
 			margin-top: 121px;
 
