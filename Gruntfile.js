@@ -133,7 +133,7 @@ module.exports = function(grunt) {
       images: {
         expand:true,
         cwd: "./src/assets",
-        src: ["img/**"],
+        src: ["img/**", "images/**"],
         dest: "./dist/assets"
       },
       views: {
@@ -143,7 +143,7 @@ module.exports = function(grunt) {
         dest: "./dist"
       },
       index: {
-        src: ["./src/index.html"],
+        src: ["./src/index-build.html"],
         dest: "./dist/index.html"
       },
       shiv: {

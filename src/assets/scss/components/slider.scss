@@ -1,6 +1,6 @@
 .slider {
-    height: 245px;
     margin-right: 90px;
+    overflow: hidden; // because firefox is stupid
 
     .frame {
         background: $transparent-white;
