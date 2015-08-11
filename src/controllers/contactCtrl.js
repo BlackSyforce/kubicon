@@ -1,4 +1,4 @@
 angular.module("Kubicon")
 	.controller("ContactCtrl", function($rootScope) {
-		$rootScope.selectedPage = 6;
+		$rootScope.selectedPage = 5;
 	});

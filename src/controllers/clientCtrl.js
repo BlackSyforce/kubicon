@@ -1,6 +1,6 @@
 angular.module('Kubicon')
     .controller('ClientCtrl', function($scope, $rootScope) {
-        $rootScope.selectedPage = 5;
+        $rootScope.selectedPage = 4;
 
         $scope.clients = [
         	'./assets/images/client.png',
