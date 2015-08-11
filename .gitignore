@@ -68,3 +68,4 @@ Gemfile.lock
 
 ##### IDE (Webstorm) ####
 .idea
+npm-debug.log

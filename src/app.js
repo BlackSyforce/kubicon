@@ -41,9 +41,8 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
         $anchorScroll.yOffset = 0;
         var redirectUrls = [
             "",
+            "",
             "products",
-            "",
-            "",
             "",
             "clients",
             "contact"
