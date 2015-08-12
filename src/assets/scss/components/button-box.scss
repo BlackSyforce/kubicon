@@ -7,6 +7,11 @@
         font-size: 38px;
         font-family: "SohoStd-Medium";
         font-weight: bold;
+        position: fixed;
+        bottom: 0;
+        right:0;
+        margin-right:10px;
+        display: none;
         -webkit-transform: rotate(90deg);
         -moz-transform: rotate(90deg);
         -ms-transform: rotate(90deg);

@@ -1,7 +1,7 @@
 angular.module("Kubicon", ["ngRoute", "ngMap"])
     .config(function($routeProvider) {
         $routeProvider
-            .when("/", {
+            .when("/about_us", {
                 templateUrl: "./views/home.tpl.html",
                 controller: "HomeCtrl"
             })
@@ -34,16 +34,15 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 controller: "ContactCtrl"
             })
             .otherwise({
-                redirectTo: "/"
+                redirectTo: "/about_us"
             });
     })
     .run(function($rootScope, $location, $anchorScroll) {
         $anchorScroll.yOffset = 0;
         var redirectUrls = [
+            "about_us",
             "",
             "products",
-            "",
-            "",
             "",
             "clients",
             "contact"

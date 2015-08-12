@@ -26,7 +26,7 @@
                 <div ng-repeat="product in category.products" ng-class="getCardCss($index)" class="card product">
                     <div class="frame product-description">
                         <div class="interior">
-                            <div class="title" ng-bind="product.title"></div>
+                            <div class="title" ng-bind="product.title" ng-click="selectProduct(product)"></div>
                             <div class="description" ng-bind="product.description"></div>
                             <div class="button-box" ng-click="selectProduct(product)" >+</div>
                         </div>
@@ -43,6 +43,7 @@
         </div>
         <!-- End of Overlay -->
     </div>
+    <div scroll-top class="button-box button-top pull-right"></div>
     <!-- End of Content -->
     <div class="footer" ng-include="'./views/footer.tpl.html'"></div>
 </div>

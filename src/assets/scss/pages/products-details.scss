@@ -87,6 +87,11 @@
 			.title {
 				color: inherit;
 				margin-left: 0;
+
+				&:hover {
+					color: #86d4aa;
+					cursor: pointer;
+				}
 			}
 
 			.button-box {
