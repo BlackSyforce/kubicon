@@ -139,6 +139,7 @@ angular.module('Kubicon')
 
         $scope.category = {};
         $scope.product = {};
+        $scope.productListId = null;
 
         $scope.initLocation = function() {
             var items = $location.path().split('/');
@@ -166,6 +167,7 @@ angular.module('Kubicon')
                         for (var j = 0; j < productsMap[i].products.length; j++) {
                             if (productsMap[i].products[j].id == product) {
                                 $scope.product = productsMap[i].products[j];
+                                $scope.productListId = productsMap[i].id;
                                 return;
                             }
                         }
