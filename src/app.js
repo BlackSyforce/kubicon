@@ -37,7 +37,7 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 redirectTo: "/products"
             });
     })
-    .run(function($rootScope, $location, $anchorScroll) {
+    .run(function($rootScope, $location, $anchorScroll, $window) {
         $anchorScroll.yOffset = 0;
         var redirectUrls = [
             "about_us",
@@ -47,6 +47,9 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
             "clients",
             "contact"
         ];
+        $rootScope.link = function (redirectLink){
+            $window.location.href = redirectLink; 
+        }
         
         $rootScope.selectPage = function(index) {
             $location.path(redirectUrls[index]);
