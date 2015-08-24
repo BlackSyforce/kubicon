@@ -9,7 +9,7 @@ angular.module('Kubicon')
                 id: 1,
                 title: 'Autodesk AUTOCAD LT',
                 img: './assets/images/product1.png',
-                description: 'Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
+                description: ' Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk. Solutia software 2D, AutoCAD LT®, destinata redactarii si intocmirii detaliilor de executie, reprezinta o alegere profesionala ce vizeaza asigurarea productivitatii, fiabilitatii si compatibilitatii. Formatul nativ de fisier DWG ofera stabilitate si este perfect compatibil cu toate solutiile de proiectare Autodesk.'
             }, {
                 id: 2,
                 title: 'AUTOCAD 2013',
@@ -202,6 +202,7 @@ angular.module('Kubicon')
 
         $scope.category = {};
         $scope.product = {};
+        $scope.productListId = null;
 
         $scope.initLocation = function() {
             var items = $location.path().split('/');
@@ -229,6 +230,7 @@ angular.module('Kubicon')
                         for (var j = 0; j < productsMap[i].products.length; j++) {
                             if (productsMap[i].products[j].id == product) {
                                 $scope.product = productsMap[i].products[j];
+                                $scope.productListId = productsMap[i].id;
                                 return;
                             }
                         }

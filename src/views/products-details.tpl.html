@@ -7,7 +7,7 @@
 
             <div class="frame btn pull-left pointer" ng-click="selectPage(1)">
                 <div class="interior">
-                    <div class="subtitle">< Inapoi la produse</div>
+                    <div class="subtitle">< Lista categorii</div>
                 </div>
             </div>
             <!-- End of Button -->
@@ -26,9 +26,9 @@
                 <div ng-repeat="product in category.products" ng-class="getCardCss($index)" class="card product">
                     <div class="frame product-description">
                         <div class="interior">
-                            <div class="title" ng-bind="product.title"></div>
+                            <div class="title" ng-bind="product.title" ng-click="selectProduct(product)"></div>
                             <div class="description" ng-bind="product.description"></div>
-                            <div class="button-box" ng-click="selectProduct(product)">+</div>
+                            <div class="button-box" ng-click="selectProduct(product)" >+</div>
                         </div>
                     </div>
                     <div class="frame product-image" ng-class="getImageCss($index)">
