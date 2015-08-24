@@ -208,14 +208,14 @@ angular.module('Kubicon')
             var items = $location.path().split('/');
             var location = items[items.length - 1];
 
-            if (!isNaN(location)) {
+            //if (!isNaN(location)) {
                 for (var i = 0; i < productsMap.length; i++) {
-                    if (productsMap[i].id == location) {
+                    if (productsMap[i].title == location) {
                         $scope.category = productsMap[i];
                         return;
                     }
                 }
-            }
+            //}
         };
 
         $scope.initProduct = function() {
@@ -223,24 +223,24 @@ angular.module('Kubicon')
             var location = items[items.length - 2];
             var product = items[items.length - 1];
 
-            if (!isNaN(location) && !isNaN(product)) {
+            //if (!isNaN(location) && !isNaN(product)) {
                 for (var i = 0; i < productsMap.length; i++) {
-                    if (productsMap[i].id == location) {
+                    if (productsMap[i].title == location) {
                         $scope.category = productsMap[i];
                         for (var j = 0; j < productsMap[i].products.length; j++) {
-                            if (productsMap[i].products[j].id == product) {
+                            if (productsMap[i].products[j].title == product) {
                                 $scope.product = productsMap[i].products[j];
-                                $scope.productListId = productsMap[i].id;
+                                $scope.productListId = productsMap[i].title;
                                 return;
                             }
                         }
                     }
                 }
-            }
+            //}
         };
 
         $scope.selectProduct = function(product) {
-            $rootScope.selectProduct($scope.category.id, product.id);
+            $rootScope.selectProduct($scope.category.title, product.title);
         };
 
         $scope.getCardCss = function($index) {
