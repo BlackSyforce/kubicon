@@ -1,13 +1,13 @@
 angular.module("Kubicon", ["ngRoute", "ngMap"])
     .config(function($routeProvider) {
         $routeProvider
-            .when("/about_us", {
-                templateUrl: "./views/home.tpl.html",
-                controller: "HomeCtrl"
-            })
             .when("/products", {
                 templateUrl: "./views/products.tpl.html",
                 controller: "ProductCtrl"
+            })
+            .when("/about_us", {
+                templateUrl: "./views/home.tpl.html",
+                controller: "HomeCtrl"
             })
             .when("/clients", {
                 templateUrl: "./views/clients.tpl.html",
@@ -34,7 +34,7 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 controller: "ContactCtrl"
             })
             .otherwise({
-                redirectTo: "/about_us"
+                redirectTo: "/products"
             });
     })
     .run(function($rootScope, $location, $anchorScroll) {
