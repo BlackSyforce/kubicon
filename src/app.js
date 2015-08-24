@@ -13,18 +13,13 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 templateUrl: "./views/clients.tpl.html",
                 controller: "ClientCtrl"
             })
-            .when("/products/:listId", {
+            .when("/products/:listTitle", {
                 templateUrl: "./views/products-details.tpl.html",
                 controller: "ProductCtrl",
-            }, {
-                listId: "[0-9]"
             })
-            .when("/products/:listId/:productId", {
+            .when("/products/:listTitle/:productId", {
                 templateUrl: "./views/products-description.tpl.html",
                 controller: "ProductCtrl"
-            }, {
-                listId: "[0-9]",
-                productId: "[0-9]"
             })
             .when("/todo", {
                 templateUrl: "./views/todo.tpl.html"
@@ -37,7 +32,7 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 redirectTo: "/products"
             });
     })
-    .run(function($rootScope, $location, $anchorScroll) {
+    .run(function($rootScope, $location, $anchorScroll, $window) {
         $anchorScroll.yOffset = 0;
         var redirectUrls = [
             "about_us",
@@ -47,19 +42,22 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
             "clients",
             "contact"
         ];
+        $rootScope.link = function (redirectLink){
+            $window.location.href = redirectLink; 
+        }
         
         $rootScope.selectPage = function(index) {
             $location.path(redirectUrls[index]);
             $anchorScroll();
         };
 
-        $rootScope.selectProductList = function(listId) {
-            $location.path("products/" + listId);
+        $rootScope.selectProductList = function(listTitle) {
+            $location.path("products/" + listTitle);
             $anchorScroll();
         };
 
-        $rootScope.selectProduct = function(listId, productId) {
-            $location.path("products/" + listId + "/" + productId);
+        $rootScope.selectProduct = function(listTitle, productTitle) {
+            $location.path("products/" + listTitle + "/" + productTitle);
             $anchorScroll();
         };
     });

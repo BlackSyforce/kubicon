@@ -8,6 +8,7 @@ angular.module('Kubicon')
         	'./assets/images/sdcproject.png',
         	'./assets/images/traprmec.png',
         	'./assets/images/upc.png'
+
         ];
 
         $scope.getClientCss = function($index) {
