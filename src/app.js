@@ -13,18 +13,13 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 templateUrl: "./views/clients.tpl.html",
                 controller: "ClientCtrl"
             })
-            .when("/products/:listId", {
+            .when("/products/:listTitle", {
                 templateUrl: "./views/products-details.tpl.html",
                 controller: "ProductCtrl",
-            }, {
-                listId: "[0-9]"
             })
-            .when("/products/:listId/:productId", {
+            .when("/products/:listTitle/:productId", {
                 templateUrl: "./views/products-description.tpl.html",
                 controller: "ProductCtrl"
-            }, {
-                listId: "[0-9]",
-                productId: "[0-9]"
             })
             .when("/todo", {
                 templateUrl: "./views/todo.tpl.html"
@@ -56,13 +51,13 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
             $anchorScroll();
         };
 
-        $rootScope.selectProductList = function(listId) {
-            $location.path("products/" + listId);
+        $rootScope.selectProductList = function(listTitle) {
+            $location.path("products/" + listTitle);
             $anchorScroll();
         };
 
-        $rootScope.selectProduct = function(listId, productId) {
-            $location.path("products/" + listId + "/" + productId);
+        $rootScope.selectProduct = function(listTitle, productTitle) {
+            $location.path("products/" + listTitle + "/" + productTitle);
             $anchorScroll();
         };
     });

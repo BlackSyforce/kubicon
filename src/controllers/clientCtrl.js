@@ -7,7 +7,11 @@ angular.module('Kubicon')
         	'./assets/images/client.png',
         	'./assets/images/client.png',
         	'./assets/images/client.png',
-        	'./assets/images/client.png'
+        	'./assets/images/client.png',
+            './assets/images/client.png',
+            './assets/images/client.png',
+            './assets/images/client.png',
+            './assets/images/client.png'
         ];
 
         $scope.getClientCss = function($index) {
