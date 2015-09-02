@@ -7,10 +7,20 @@
         font-size: 38px;
         font-family: "SohoStd-Medium";
         font-weight: bold;
+        position: fixed;
+        bottom: 0;
+        right:0;
+        display: none;
         -webkit-transform: rotate(90deg);
         -moz-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
     }
+
+    &:hover {
+        background: $gray;
+        color: $white;
+    }
 }
+

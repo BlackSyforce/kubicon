@@ -1,7 +1,7 @@
 angular.module('Kubicon')
     .directive('slider', function() {
         return {
-            compile: function() {
+            compile: function($scope) {
                 var ongoing = false;
                 var currentIndex = 0;
                 var slideWidth = 0;
@@ -62,7 +62,11 @@ angular.module('Kubicon')
                     }
                 }
 
-                function createScope($scope) {
+                function getSlider(index) {
+                    return document.querySelector('#slider li:nth-child(' + index+ ')');
+                }
+
+                function createScope($scope, $element) {
                     if ($scope.slides && $scope.slides.length > 0) {
                         for (var i = 0; i < $scope.slides.length; i++) {
                             $scope.slides[i].active = false;
@@ -119,7 +123,7 @@ angular.module('Kubicon')
                 }
 
                 return function($scope, $element) {
-                    createScope($scope);
+                    createScope($scope, $element);
                     init($element, $scope);
                 };
             }

@@ -1,13 +1,14 @@
 angular.module('Kubicon')
     .controller('ClientCtrl', function($scope, $rootScope) {
-        $rootScope.selectedPage = 5;
+        $rootScope.selectedPage = 4;
 
         $scope.clients = [
-        	'./assets/images/client.png',
-        	'./assets/images/client.png',
-        	'./assets/images/client.png',
-        	'./assets/images/client.png',
-        	'./assets/images/client.png'
+        	'./assets/images/discositiganas.png',
+        	'./assets/images/installDataProject.png',
+        	'./assets/images/sdcproject.png',
+        	'./assets/images/traprmec.png',
+        	'./assets/images/upc.png'
+
         ];
 
         $scope.getClientCss = function($index) {

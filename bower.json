@@ -16,6 +16,7 @@
   "dependencies": {
     "angular": "*",
     "angular-route": "*",
-    "ngmap": "*"
+    "ngmap": "*",
+    "jquery": "*"
   }
 }

@@ -9,16 +9,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     // In this concatenation task is where we set the order of loading the angular files
     concat: {
       options: {
-        banner: '<%= banner %>',
         stripBanners: true,
         seperator: ';'
       },
@@ -41,7 +35,6 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '<%= banner %>',
         preserveComments: false,
         semicolons: true,
         sourceMap: false
@@ -92,8 +85,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'compressed',
-          banner: '<%= banner %>'
+          style: 'compressed'
         },
         files: [{
           expand: false,
@@ -105,8 +97,7 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
-          style: "expanded",
-          banner: "<%= banner %>"
+          style: "expanded"
         },
         files: [{
           expand: false,

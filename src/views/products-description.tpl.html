@@ -5,7 +5,7 @@
 		<div class="overlay">
 			<div class="header" ng-include="'./views/header.tpl.html'"></div>
 			
-			<div class="frame btn pull-left pointer" ng-click="selectPage(1)">
+			<div class="frame btn pull-left pointer" ng-click="selectProductList(productListId)">
                 <div class="interior">
                     <div class="subtitle" ng-cloak>< Inapoi la {{category.title.toLowerCase()}}</div>
                 </div>
@@ -24,7 +24,7 @@
 					<!-- End of Frame -->
 
 					<ul class="menu vertical">
-						<li class="title">CERE OFERTA</li>
+						<li class="title"><a href="">INFORMATII</a></li>
 						<li>
 							<span class="arrow"></span>
 							<span>Autodesk subscription</span>
@@ -65,6 +65,7 @@
             <!-- End of Product -->
 		</div>
 		<!-- End of Overlay -->
+		<div scroll-top class="button-box button-top pull-right"><</div>
 	</div>
 	<!-- End of Content -->
     <div class="footer" ng-include="'./views/footer.tpl.html'"></div>

@@ -16,15 +16,23 @@
              <div class="grid pull-left">
 
                 <div class="card bl5">
-                    <div class="tile projects-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(1)">
+                    <div class="tile projects-tile" ng-click="selectProductList('Proiecte generale')"></div>
+                    <div class="tile flip-box" ng-click="selectProductList('Proiecte generale')">
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Proiecte generale</div>
                                 <div class="button-box">+</div>
                             </div>
                             <div class="back">
-                                <div class="title">Detali</div>
+                                <div class="title">
+                                     <ul>
+                                        <li>AutoCAD LT</li>
+                                        <li>AutoCAD</li>
+                                        <li>RaterDesing</li>
+                                        <li>AutoCAD</li>
+                                        <li>DesignSuite</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +40,7 @@
 
                 <div class="card bl3">
                     <div class="tile mecanic-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(2)">
+                    <div class="tile flip-box" ng-click="selectProductList('Mecanica')">
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Mecanica</div>
@@ -46,45 +54,75 @@
                 </div>
 
                 <div class="card">
-                    <div class="tile instalation-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(3)">
+
+                    <div class="tile instalation-tile" ng-click="selectProductList('Instalatii')"></div>
+                    <div class="tile flip-box" ng-click="selectProductList('Instalatii')">
+
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Instalatii</div>
                                 <div class="button-box">+</div>
                             </div>
                             <div class="back">
-                                <div class="title">Detali</div>
+                                <div class="title">
+                                    <ul>
+                                        <li>AutoCAD MEP</li>
+                                        <li>Revit MEP</li>
+                                        <li>AutoCAD Plant 3D</li>
+                                        <li>Building Design Suite</li>
+                                        <li>Plant Desing Suite</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card bl1">
-                    <div class="tile structure-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(4)">
+
+
+                    <div class="tile structure-tile" ng-click="selectProductList('Structuri')"></div>
+                    <div class="tile flip-box" ng-click="selectProductList('Structuri')">
+
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Structuri</div>
                                 <div class="button-box">+</div>
                             </div>
                             <div class="back">
-                                <div class="title">Detali</div>
+                                <div class="title">
+                                    <ul>
+                                        <li>AdvanceSteel</li>
+                                        <li>Advance Concrete</li>
+                                        <li>Revit Structure</li>
+                                        <li>Robot Structural Analysis</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="tile architecture-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(5)">
+
+
+                    <div class="tile architecture-tile" ng-click="selectProductList('Arhitectura')"></div>
+                    <div class="tile flip-box" ng-click="selectProductList('Arhitectura')">
+
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Arhitectura</div>
                                 <div class="button-box">+</div>
                             </div>
                             <div class="back">
-                                <div class="title">Detali</div>
+                                <div class="title">
+                                    <ul>
+                                        <li>Revit LT Suite</li>
+                                        <li>AutoCAD Architecture</li>
+                                        <li>Revit Architecture</li>
+                                        <li>Building Design Suite</li>
+                                    </ul> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +130,7 @@
 
                 <div class="card bl3">
                     <div class="tile simulate-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(6)">
+                    <div class="tile flip-box" ng-click="selectProductList('Simulari')">
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Simulare</div>
@@ -106,15 +144,24 @@
                 </div>
 
                 <div class="card">
-                    <div class="tile infrastructure-tile"></div>
-                    <div class="tile flip-box" ng-click="selectProductList(7)">
+
+                    <div class="tile infrastructure-tile" ng-click="selectProductList('Infrastructura')"></div>
+                    <div class="tile flip-box" ng-click="selectProductList('Infrastructura')">
+
                         <div class="flip-card">
                             <div class="front">
                                 <div class="title">Infrastructuri</div>
                                 <div class="button-box">+</div>
                             </div>
                             <div class="back">
-                                <div class="title">Detali</div>
+                                <div class="title">
+                                    <ul>
+                                        <li>AutoCAD MAP 3D</li>
+                                        <li>AutoCAD Civil 3D</li>
+                                        <li>Infrastructure Design Suite</li>
+                                        <li>Topo LT</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,6 +173,7 @@
         </div>
         <!-- End of Overlay -->
     </div>
+    <div scroll-top class="button-box button-top pull-right"><</div>
     <!-- End of Content -->
     <br class="clearfix" />
     <div class="footer" ng-include="'./views/footer.tpl.html'"></div>
