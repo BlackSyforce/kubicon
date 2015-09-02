@@ -208,14 +208,12 @@ angular.module('Kubicon')
             var items = $location.path().split('/');
             var location = items[items.length - 1];
 
-            //if (!isNaN(location)) {
-                for (var i = 0; i < productsMap.length; i++) {
-                    if (productsMap[i].title == location) {
-                        $scope.category = productsMap[i];
-                        return;
-                    }
+            for (var i = 0; i < productsMap.length; i++) {
+                if (productsMap[i].title == location) {
+                    $scope.category = productsMap[i];
+                    return;
                 }
-            //}
+            }
         };
 
         $scope.initProduct = function() {
@@ -223,24 +221,18 @@ angular.module('Kubicon')
             var location = items[items.length - 2];
             var product = items[items.length - 1];
 
-            //if (!isNaN(location) && !isNaN(product)) {
-                for (var i = 0; i < productsMap.length; i++) {
-                    if (productsMap[i].title == location) {
-                        $scope.category = productsMap[i];
-                        for (var j = 0; j < productsMap[i].products.length; j++) {
-                            if (productsMap[i].products[j].title == product) {
-                                $scope.product = productsMap[i].products[j];
-<<<<<<< HEAD
-                                $scope.productListId = productsMap[i].id;
-=======
-                                $scope.productListId = productsMap[i].title;
->>>>>>> e88448576503898de4d46772a88e4b515368a0d4
-                                return;
-                            }
+            for (var i = 0; i < productsMap.length; i++) {
+                if (productsMap[i].title == location) {
+                    $scope.category = productsMap[i];
+                    for (var j = 0; j < productsMap[i].products.length; j++) {
+                        if (productsMap[i].products[j].title == product) {
+                            $scope.product = productsMap[i].products[j];
+                            $scope.productListId = productsMap[i].id;
+                            return;
                         }
                     }
                 }
-            //}
+            }
         };
 
         $scope.selectProduct = function(product) {
@@ -259,8 +251,6 @@ angular.module('Kubicon')
         			return  'bt-1 bl2';
         		}
         	}
-
-        	return;
         };
 
         $scope.getImageCss = function($index) {
@@ -272,7 +262,5 @@ angular.module('Kubicon')
         			return 'bt2';
         		}
         	}
-
-        	return;
         };
     });
