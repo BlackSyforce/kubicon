@@ -62,10 +62,6 @@ angular.module('Kubicon')
                     }
                 }
 
-                function getSlider(index) {
-                    return document.querySelector('#slider li:nth-child(' + index+ ')');
-                }
-
                 function createScope($scope) {
                     if ($scope.slides && $scope.slides.length > 0) {
                         for (var i = 0; i < $scope.slides.length; i++) {

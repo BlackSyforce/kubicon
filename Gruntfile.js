@@ -96,7 +96,7 @@ module.exports = function(grunt) {
           banner: '<%= banner %>'
         },
         files: [{
-          expand: true,
+          expand: false,
           cwd: 'src/assets/scss',
           src: ['*.scss'],
           dest: 'dist/assets/css',
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
           banner: "<%= banner %>"
         },
         files: [{
-          expand: true,
+          expand: false,
           cwd: "./src/assets/scss",
           src: "*.scss",
           dest: "./src/assets/css",
@@ -172,13 +172,13 @@ module.exports = function(grunt) {
       css: {
         options: {
           cwd: "src/assets/css",
-          livereload: 1337
+          livereload: 1352
         },
         files: ["*.css", "**/*.css"]
       },
       js: {
         options: {
-          livereload: 1337
+          livereload: 1352
         },
         files: ["src/**/*.js", "Gruntfile.js"],
         tasks: ["newer:jshint:app", "notify:js"]
@@ -186,7 +186,7 @@ module.exports = function(grunt) {
       views: {
         options: {
           cwd: 'src/views',
-          livereload: 1337
+          livereload: 1352
         },
         files: ['*.tpl.html', '**/*.tpl.html']
       },
@@ -319,13 +319,13 @@ module.exports = function(grunt) {
     server: {
       dev: {
         host: "localhost",
-        port: 8081,
+        port: 6081,
         index: "index.html",
         publicDir: "./src"
       },
       live: {
         host: "localhost",
-        port: 8081,
+        port: 6081,
         index: "index.html",
         publicDir: "./dist",
         wait: true
@@ -502,10 +502,7 @@ module.exports = function(grunt) {
   // grunt.registerTask('scss', ['forceOn', 'forceOff', 'sass:dist', 'notify:scss']);
 
   grunt.registerTask("dev", [
-    "jshint:app",
-    "sass:dev",
     "sails-linker",
-    "notify:dev"
   ]);
 
   grunt.registerTask("dev:watch", [
