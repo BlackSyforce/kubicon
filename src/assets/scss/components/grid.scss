@@ -40,7 +40,7 @@
         &.simulate-tile {
             background: $simulate-tile;
             background-size: cover;
-        }        
+        }
     }
 
     .title {
@@ -48,30 +48,34 @@
         font-size: 20px;
         margin: 30px 20px 0 20px;
 
-            &.projects  {
-                color: $white;
-                font-size: 18px;
-            }
+        li {
+            font-size: 18px;
+        }
 
-            &.instalation {
-                color: $white;
-                font-size: 18px;
-            }
+        &.projects  {
+            color: $white;
+            font-size: 18px;
+        }
 
-            &.architecture {
-                color: $white;
-                font-size: 18px;
-            }
+        &.instalation {
+            color: $white;
+            font-size: 18px;
+        }
 
-            &.structure {
-                color: $white;
-                font-size: 18px;
-            }
+        &.architecture {
+            color: $white;
+            font-size: 18px;
+        }
 
-            &.infrastructure {
-                color: $white;
-                font-size: 18px;
-            }
+        &.structure {
+            color: $white;
+            font-size: 18px;
+        }
+
+        &.infrastructure {
+            color: $white;
+            font-size: 18px;
+        }
     }
 
     .button-box {

@@ -17,7 +17,7 @@
                     <div class="interior">
                         <div class="logo-kubicon"></div>
                     </div>
-                    <div class="title">Solutii pentru proiectare generala Kubicon</div>
+                    <div class="title">Solutii pentru {{category.title}}</div>
                 </div>
             </div>
             <!-- End of Frame -->
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="frame product-image" ng-class="getImageCss($index)">
-                        <img ng-src="{{product.img}}">
+                        <img ng-src="{{product.img}}" class="pointer" ng-click="selectProduct(product)">
                     </div>
                 </div>
 

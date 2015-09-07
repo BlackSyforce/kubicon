@@ -155,11 +155,6 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      scss: {
-        cwd: "src/assets/scss",
-        files: ['*.scss', '**/*.scss'],
-        tasks: ['sass:dev', "notify:scss"]
-      },
       css: {
         options: {
           cwd: "src/assets/css",
@@ -562,6 +557,10 @@ module.exports = function(grunt) {
     "ngtemplates:karma",
     "karma:unit",
     "protractor"
+  ]);
+
+  grunt.registerTask("adi", [
+    "sass:dev"
   ]);
 
 };
