@@ -1,6 +1,19 @@
 .slider {
     margin-right: 90px;
-    overflow: hidden; // because firefox is stupid
+    position: relative;
+
+    .slider-container {
+        overflow: hidden; // because firefox is stupid
+    }
+
+    .description {
+        overflow: hidden;
+        height: 105px;
+
+        p {
+            margin: 0;
+        }
+    }
 
     .frame {
         background: $transparent-white;
@@ -14,6 +27,28 @@
 
     .control {
         margin-bottom: 2px;
+    }
+
+    .right-control {
+        position: absolute;
+        bottom: 0;
+        right: -50px;
+
+        .arrow-right {
+            margin-left: 0;
+        }
+
+        .arrow-left {
+            margin-top: 2px;
+        }
+
+        .arrow-up, .arrow-down {
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
     }
 
     .arrow-box {

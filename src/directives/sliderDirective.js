@@ -2,9 +2,11 @@ angular.module('Kubicon')
     .directive('slider', function() {
         return {
             compile: function($scope) {
+                var STEP_UP = 60;
                 var ongoing = false;
                 var currentIndex = 0;
                 var slideWidth = 0;
+                var slideHeight = 0;
 
                 function setNextSlide(slide, index) {
                     if (slide) {
@@ -27,6 +29,7 @@ angular.module('Kubicon')
                             'left': slideWidth + 'px'
                         }, 1000, function() {
                             slide.active = false;
+                            resetSlide(getSliderContent($slide));
                         });
                     }
                 }
@@ -37,12 +40,27 @@ angular.module('Kubicon')
                         'left': -1 * slideWidth + 'px'
                     }, 1000, function() {
                         $slide.css("display", "none");
+                        resetSlide(getSliderContent($slide));
                         slide.active = false;
                     });
                 }
 
+                function animateSlideUp(index) {
+                    var $slide = $('#slider li:nth-child(' + (index + 1)+ ') p');
+                    $slide.animate({
+                        'margin-top': --slideHeight * STEP_UP + 'px'
+                    }, 500);
+                }
+
+                function animateSlideDown(index) {
+                    var $slide = $('#slider li:nth-child(' + (index + 1)+ ') p');
+                    $slide.animate({
+                        'margin-top': (slideHeight == 0 ? 0 : ++slideHeight) * STEP_UP + 'px'
+                    }, 500);
+                }
+
                 function animateCurrentSlide(slide, index, direction) {
-                    if(slide){
+                    if(slide) {
                         ongoing = true;
                         var $slide = $('#slider li:nth-child(' + (index + 1)+ ')');
 
@@ -62,8 +80,25 @@ angular.module('Kubicon')
                     }
                 }
 
+                function resetSlide(slide) {
+                    slide.css("margin-top", 0);
+                    slideHeight = 0;
+                }
+
                 function getSlider(index) {
-                    return document.querySelector('#slider li:nth-child(' + index+ ')');
+                    return $('#slider li:nth-child(' + (index + 1) + ')');
+                }
+
+                function getSliderContent(slider) {
+                    return slider.find("p");
+                }
+
+                function getSliderContainerHeight(slider) {
+                    return parseInt(slider.find(".description").css("height"));
+                }
+
+                function getSliderContentHeight(slider) {
+                    return parseInt(slider.find("p").css("height"));
                 }
 
                 function createScope($scope, $element) {
@@ -108,6 +143,30 @@ angular.module('Kubicon')
                         animateNextSlide(currentSlide, currentIndex);
                         animateCurrentSlide(prevSlide, prevIndex, false);
                         currentIndex = prevIndex;
+                    };
+
+                    $scope.slideUp = function() {
+                        if (ongoing) {
+                            return;
+                        }
+
+                        var slider = getSlider(currentIndex);
+                        var contentHeight = getSliderContentHeight(slider);
+                        var containerHeight = getSliderContainerHeight(slider);
+
+                        if (contentHeight < containerHeight + (STEP_UP * slideHeight * -1)) {
+                            return;
+                        }
+
+                        animateSlideUp(currentIndex);
+                    };
+
+                    $scope.slideDown = function() {
+                        if (ongoing) {
+                            return;
+                        }
+
+                        animateSlideDown(currentIndex);
                     };
                 }
 

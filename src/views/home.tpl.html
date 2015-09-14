@@ -6,17 +6,25 @@
             <div class="header" ng-include="'./views/header.tpl.html'"></div>
 
             <div slider class="slider pull-right slider-position">
-                <div class="control">
-                    <div ng-click="slideNext()" class="arrow-box pull-right arrow-right">></div>
-                    <div ng-click="slidePrev()" class="arrow-box pull-right arrow-left"><</div>
-                    <br class="clearfix">
+                <div class="slider-container">
+                    <div class="control">
+                        <div ng-click="slideNext()" class="arrow-box pull-right arrow-right">></div>
+                        <div ng-click="slidePrev()" class="arrow-box pull-right arrow-left"><</div>
+                        <br class="clearfix">
+                    </div>
+                    <ul id="slider" class="frame">
+                        <li ng-repeat="slide in slides" class="interior" ng-style="{{getSlideCss(slide)}}">
+                            <div class="title" ng-bind="slide.title"></div>
+                            <div class="description">
+                                <p ng-bind="slide.text"></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="right-control">
+                        <div ng-click="slideDown()" class="arrow-box arrow-right arrow-up">></div>
+                        <div ng-click="slideUp()" class="arrow-box arrow-left arrow-down"><</div>
+                    </div>
                 </div>
-                <ul id="slider" class="frame">
-                    <li ng-repeat="slide in slides" class="interior" ng-style="{{getSlideCss(slide)}}">
-                        <div class="title" ng-bind="slide.title"></div>
-                        <div class="description" ng-bind="slide.text"></div>
-                    </li>
-                </ul>
             </div>
             <!-- End of Slider -->
 
