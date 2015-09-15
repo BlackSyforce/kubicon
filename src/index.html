@@ -27,11 +27,37 @@
         <script src="/app.js"></script>
         <script src="/controllers/clientCtrl.js"></script>
         <script src="/controllers/contactCtrl.js"></script>
+        <script src="/controllers/historyCtrl.js"></script>
         <script src="/controllers/homeCtrl.js"></script>
         <script src="/controllers/productCtrl.js"></script>
+        <script src="/controllers/serviceCtrl.js"></script>
         <script src="/directives/absolutExpansionDirective.js"></script>
+        <script src="/directives/imageLoaderDirective.js"></script>
         <script src="/directives/scrollTopDirective.js"></script>
         <script src="/directives/sliderDirective.js"></script>
         <!-- /app -->
+
+        <div class="popup" ng-show="showPopupForm">
+            <form class="form frame" action="mailto:adrian.puiu@barandisolutions.com" method="POST">
+                <div class="form-row">
+                    <label>Denumire Companie:</label>
+                    <input type="text" placeholder="Denumire Companie" name="company" ng-model="form.company">
+                </div>
+                <div class="form-row">
+                    <label>Nume si Prenume:</label>
+                    <input type="text" placeholder="Nume si Prenume" name="name" ng-model="form.name">
+                </div>
+                <div class="form-row">
+                    <label>Telefon de contact:</label>
+                    <input type="text" placeholder="Telefon de contact" name="phone" ng-model="form.phone">
+                </div>
+                <div class="form-row">
+                    <label>E-mail:</label>
+                    <input type="text" placeholder="E-mail" name="mail" ng-model="form.mail">
+                </div>
+                <input class="submit-btn pointer" type="submit" value="Trimite">
+                <input class="cancel-btn pointer" type="button" value="Anuleaza" ng-click="hideForm()">
+            </form>
+        </div>
     </body>
 </html>

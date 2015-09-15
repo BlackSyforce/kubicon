@@ -28,22 +28,42 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 templateUrl: "./views/contact.tpl.html",
                 controller: "ContactCtrl"
             })
+            .when("/services", {
+                templateUrl: "./views/services.tpl.html",
+                controller: "ServiceCtrl"
+            })
+            .when("/mission", {
+                templateUrl: "./views/mission.tpl.html"
+            })
+            .when("/history", {
+                templateUrl: "./views/history.tpl.html",
+                controller: "HistoryCtrl"
+            })
+            .when("/partners", {
+                templateUrl: "./views/partners.tpl.html",
+                controller: "HistoryCtrl"
+            })
             .otherwise({
-                redirectTo: "/products"
+                redirectTo: "/products",
+                controller: "HistoryCtrl"
             });
     })
     .run(function($rootScope, $location, $anchorScroll, $window) {
+        $rootScope.showPopupForm = false;
+        $rootScope.form = {};
+
         $anchorScroll.yOffset = 0;
         var redirectUrls = [
             "about_us",
             "",
             "products",
-            "",
+            "services",
             "clients",
             "contact"
         ];
         $rootScope.link = function (redirectLink){
-            $window.location.href = redirectLink; 
+            $window.location.href = redirectLink;
+            $anchorScroll();
         }
         
         $rootScope.selectPage = function(index) {
@@ -59,5 +79,14 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
         $rootScope.selectProduct = function(listTitle, productTitle) {
             $location.path("products/" + listTitle + "/" + productTitle);
             $anchorScroll();
+        };
+
+        $rootScope.showForm = function() {
+            $rootScope.showPopupForm = true;
+        };
+
+        $rootScope.hideForm = function() {
+            $rootScope.showPopupForm = false;
+            $rootScope.form = {};
         };
     });

@@ -1,0 +1,39 @@
+.form {
+
+	.submit-btn, .cancel-btn {
+		width: 75px;
+		height: 40px;
+		margin-top: 10px;
+		border: none;
+	}
+
+	.submit-btn {
+		background-color: $teal;
+	}
+
+	.cancel-btn {
+		color: $opac-simple-white;
+		background-color: $dark-gray;
+	}
+
+	.form-row {
+		font-size: 18px;
+		line-height: 25px;
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		label, input {
+			display: block;
+		}
+
+		input {
+			width: 97%;
+			margin-top: 5px;
+			border: none;
+			height: 20px;
+			padding-left: 10px;
+		}
+	}
+}

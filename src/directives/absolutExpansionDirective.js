@@ -1,24 +1,30 @@
 angular.module("Kubicon")
-	.directive("absolutContent", function($timeout) {
+	.directive("absolutContent", function($timeout, $rootScope) {
 		return {
 			compile: function() {
 				return function($scope, $element) {
-					$timeout(function() {
+					$rootScope.$on("imageLoaded", function() {
 						var element = $($element);
 						element.css("height", element.find(".overlay").height());
-					}, 100);
+					});
+					// $timeout(function() {
+						
+					// }, 100);
 				};
 			}
 		};
 	})
-	.directive("absolutContainer", function($timeout) {
+	.directive("absolutContainer", function($timeout, $rootScope) {
 		return {
 			compile: function() {
 				return function($scope, $element) {
-					$timeout(function() {
+					$rootScope.$on("imageLoaded", function() {
 						var element = $($element);
 						element.css("height", element.find(".footer").height());
-					}, 150);
+					});
+					// $timeout(function() {
+						
+					// }, 150);
 				};
 			}
 		};

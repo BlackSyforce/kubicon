@@ -1,6 +1,10 @@
 .home {
+    &.container {
+        height: 1158px;
+    }
+
     .content {
-        height: 1544px;
+        height: 974px;
     }
 
     .underlay {
