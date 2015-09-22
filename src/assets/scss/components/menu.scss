@@ -23,3 +23,14 @@
         }
     }
 }
+
+@media (max-width: 1360px) {
+    .menu {
+        font-size: 12px;
+
+        li {
+            width: 79px;
+            padding: 11px 0;
+        }
+    }
+}

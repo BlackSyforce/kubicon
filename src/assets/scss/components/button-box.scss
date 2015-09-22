@@ -23,3 +23,11 @@
         color: $white;
     }
 }
+
+@media (max-width: 1360px) {
+    .button-box {
+        &.button-top {
+            font-size: 26.5px;
+        }
+    }
+}

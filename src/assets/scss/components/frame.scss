@@ -23,3 +23,24 @@
         line-height: 25px;
     }
 }
+
+@media (max-width: 1360px) {
+    .frame {
+        width: 339.5px;
+        height: 150.5px;
+
+        .title {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .interior {
+            margin: 25px;
+        }
+
+        .description {
+            font-size: 11px;
+            line-height: 19px;
+        }
+    }
+}

@@ -20,3 +20,15 @@
         }
     }
 }
+
+@media (max-width: 1360px) {
+    .home {
+        &.container {
+            height: 869px;
+        }
+
+        .content {
+            height: 702px;
+        }
+    }
+}

@@ -17,3 +17,20 @@
         width: 377px;
     }
 }
+
+@media (max-width: 1360px) {
+    .products {
+        &.container {
+            height: 1102px;
+        }
+
+        .content {
+            height: 934px;
+        }
+
+        .intro {
+            width: 264px;
+            margin-left: 80px;
+        }
+    }
+}

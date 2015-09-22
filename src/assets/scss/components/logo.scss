@@ -1,3 +1,9 @@
+$logo-width: 146px;
+$logo-height: 39px;
+
+$logo-kubicon-width: 128px;
+$logo-kubicon-height: 133px;
+
 .logo {
     width: $logo-width;
     height: $logo-height;
@@ -20,4 +26,12 @@
 	width: $logo-kubicon-width;
     height: $logo-kubicon-height;
 	background: $logo-kubicon;
+}
+
+@media (max-width: 1360px) {
+    .logo-kubicon {
+        width: 89.5px;
+        height: 93px;
+        background-size: 89.5px 93px;
+    }
 }

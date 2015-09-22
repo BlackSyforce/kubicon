@@ -20,5 +20,28 @@
         <!-- app -->
         <script src="./assets/js/production.min.js"></script>
         <!-- /app -->
+
+        <div class="popup" ng-show="showPopupForm">
+            <form class="form frame">
+                <div class="form-row">
+                    <label>Denumire Companie:</label>
+                    <input type="text" placeholder="Denumire Companie" name="company" ng-model="form.company">
+                </div>
+                <div class="form-row">
+                    <label>Nume si Prenume:</label>
+                    <input type="text" placeholder="Nume si Prenume" name="name" ng-model="form.name">
+                </div>
+                <div class="form-row">
+                    <label>Telefon de contact:</label>
+                    <input type="text" placeholder="Telefon de contact" name="phone" ng-model="form.phone">
+                </div>
+                <div class="form-row">
+                    <label>E-mail:</label>
+                    <input type="text" placeholder="E-mail" name="mail" ng-model="form.mail">
+                </div>
+                <input class="submit-btn pointer" type="button" value="Trimite" ng-click="submitForm()">
+                <input class="cancel-btn pointer" type="button" value="Anuleaza" ng-click="hideForm()">
+            </form>
+        </div>
     </body>
 </html>

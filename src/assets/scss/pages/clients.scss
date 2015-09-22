@@ -47,3 +47,32 @@
         }
     }
 }
+
+@media (max-width: 1360px) {
+    .clients {
+
+        .intro {
+            margin-left: 400px;
+            width: 266px;
+        }
+
+        .frame.client {
+            width: 273px;
+            height: 143.5px;
+        }
+
+        .grid {
+            .bl1 {
+                margin-left: 133px;
+            }
+
+            .bt-1 {
+                margin-top: -71.5px;
+            }
+
+            .br1 {
+                margin-right: 133px;
+            }
+        }
+    }
+}

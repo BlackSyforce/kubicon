@@ -48,7 +48,7 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
                 controller: "HistoryCtrl"
             });
     })
-    .run(function($rootScope, $location, $anchorScroll, $window) {
+    .run(["$rootScope", "$location", "$anchorScroll", "$window", "HttpService", function($rootScope, $location, $anchorScroll, $window, HttpService) {
         $rootScope.showPopupForm = false;
         $rootScope.form = {};
 
@@ -61,6 +61,7 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
             "clients",
             "contact"
         ];
+
         $rootScope.link = function (redirectLink){
             $window.location.href = redirectLink;
             $anchorScroll();
@@ -89,4 +90,9 @@ angular.module("Kubicon", ["ngRoute", "ngMap"])
             $rootScope.showPopupForm = false;
             $rootScope.form = {};
         };
-    });
+
+        $rootScope.submitForm = function() {
+            HttpService.handleSubmit($rootScope.form);
+            $rootScope.hideForm();
+        };
+    }]);

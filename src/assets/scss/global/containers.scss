@@ -1,3 +1,6 @@
+$content-width: 1260px;
+$content-height: 678px;
+
 .container {
     width: 1349px;
     height: 1728px;
@@ -43,6 +46,44 @@
     .footer {
         .logo-autodesk {
             margin-right: 35px;
+        }
+    }
+}
+
+@media (max-width: 1360px) {
+    .container {
+        width: 944px;
+
+        .overlay {
+            width: 882px;
+        }
+
+        .content {
+            width: 882px;
+        }
+
+        .header {
+            width: 625px;
+        }
+
+        .arrow-box {
+            width: 19.5px;
+            height: 19.5px;
+        }
+
+        .button-box {
+            width: 18px;
+            height: 18px;
+        }
+
+        .button-top {
+            width: 32px;
+            height: 32px;
+        }
+
+        .tile {
+            width: 137px;
+            height: 137px;
         }
     }
 }

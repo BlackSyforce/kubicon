@@ -23,3 +23,15 @@
 .underlay {
     height: $content-height;
 }
+
+@media (max-width: 1360px) {
+    .header {
+        .subtitle {
+            font-size: 8.5px;
+        }
+
+        .logo {
+            margin: 16px 17.5px 15.5px 0;
+        }
+    }
+}

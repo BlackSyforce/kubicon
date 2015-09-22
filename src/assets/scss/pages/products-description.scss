@@ -1,3 +1,6 @@
+$menu-arrow-width: 18px;
+$menu-arrow-height: 18px;
+
 .product-description {
 	&.container {
 		height: 1204px;
@@ -84,5 +87,61 @@
 		background-color: $dark-gray;
 		margin-top: 10px;
 		color: $opac-simple-white;
+	}
+}
+
+@media (max-width: 1360px) {
+	.product-description {
+
+		.btn {
+			&.frame {
+				margin-top: 85px;
+				height: 35px;
+				font-size: 12px;
+
+				.interior {
+					margin: 11px;
+				}
+			}
+		}
+
+		.product {
+			.images {
+				width: 215.5px;
+				height: 205px;
+
+				.title {
+					font-size: 12px;
+				}
+
+				img {
+					width: 190px;
+				}
+			}
+		}
+
+		.offer-button {
+			padding: 8px 5px;
+			font-size: 12px;
+		}
+
+		.menu.vertical {
+			width: 206.5px;
+
+			li {
+				width: 207px;
+			}
+
+			.title {
+				font-size: 12px;
+			}
+
+			.arrow {
+				width: 12.5px;
+				height: 12.5px;
+				background-size: 12.5px 12.5px;
+			}
+		}
+
 	}
 }

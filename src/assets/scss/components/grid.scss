@@ -114,3 +114,46 @@
         margin-right: 392px;
     }
 }
+
+@media (max-width: 1360px) {
+    .grid {
+        .button-box {
+            line-height: 18px;
+            font-size: 17px;
+        }
+
+        .title {
+            font-size: 14px;
+            margin: 21px 14px 0 14px;
+
+            li {
+                font-size: 12px;
+            }
+        }
+
+        .button-box {
+            bottom: 14px;
+            left: 14px;
+        }
+
+        .bl1 {
+            margin-left: 73px;
+        }
+
+        .bl3 {
+            margin-left: 209px;
+        }
+
+        .bl4 {
+            margin-left: 274.5px;
+        }
+
+        .bl5 {
+            margin-left: 345px;
+        }
+
+        .br3 {
+            margin-right: 206px;
+        }
+    }
+}

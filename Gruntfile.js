@@ -70,7 +70,7 @@ module.exports = function(grunt) {
         '-W117':true
       },
       angular: {
-        src: ['src/app.js', 'src/controllers/*.js', 'src/directives/*.js']
+        src: ['src/app.js', 'src/controllers/*.js', 'src/services/*.js', 'src/directives/*.js']
       },
       data: {
         src: ['src/assets/data/**/*.json']
@@ -260,6 +260,7 @@ module.exports = function(grunt) {
           "./src/index.html": [
             "src/app.js",
             "src/controllers/*.js",
+            "src/services/*.js",
             "src/directives/*.js"
           ]
         }
@@ -275,6 +276,7 @@ module.exports = function(grunt) {
           "./src/index.html": [
             "src/app.js",
             "src/controllers/*.js",
+            "src/services/*.js",
             "src/directives/*.js"
           ]
         }
@@ -286,6 +288,7 @@ module.exports = function(grunt) {
           src: [
             "src/app.js",
             "src/controllers/*.js",
+            "src/services/*.js",
             "src/directives/*.js"
           ],
           dest: './dist/assets/js/modules.js'

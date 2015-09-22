@@ -29,6 +29,7 @@
         <script src="/controllers/contactCtrl.js"></script>
         <script src="/controllers/historyCtrl.js"></script>
         <script src="/controllers/homeCtrl.js"></script>
+        <script src="/controllers/httpService.js"></script>
         <script src="/controllers/productCtrl.js"></script>
         <script src="/controllers/serviceCtrl.js"></script>
         <script src="/directives/absolutExpansionDirective.js"></script>
@@ -38,7 +39,7 @@
         <!-- /app -->
 
         <div class="popup" ng-show="showPopupForm">
-            <form class="form frame" action="mailto:adrian.puiu@barandisolutions.com" method="POST">
+            <form class="form frame">
                 <div class="form-row">
                     <label>Denumire Companie:</label>
                     <input type="text" placeholder="Denumire Companie" name="company" ng-model="form.company">
@@ -55,7 +56,7 @@
                     <label>E-mail:</label>
                     <input type="text" placeholder="E-mail" name="mail" ng-model="form.mail">
                 </div>
-                <input class="submit-btn pointer" type="submit" value="Trimite">
+                <input class="submit-btn pointer" type="button" value="Trimite" ng-click="submitForm()">
                 <input class="cancel-btn pointer" type="button" value="Anuleaza" ng-click="hideForm()">
             </form>
         </div>

@@ -7,9 +7,10 @@ angular.module("Kubicon")
 						var element = $($element);
 						element.css("height", element.find(".overlay").height());
 					});
-					// $timeout(function() {
-						
-					// }, 100);
+					$timeout(function() {
+						var element = $($element);
+						element.css("height", element.find(".overlay").height());
+					}, 100);
 				};
 			}
 		};
@@ -22,9 +23,10 @@ angular.module("Kubicon")
 						var element = $($element);
 						element.css("height", element.find(".footer").height());
 					});
-					// $timeout(function() {
-						
-					// }, 150);
+					$timeout(function() {
+						var element = $($element);
+						element.css("height", element.find(".footer").height());
+					}, 150);
 				};
 			}
 		};
